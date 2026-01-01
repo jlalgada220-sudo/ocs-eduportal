@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - O.C.S Group of Institute</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="logo">
+        <div class="logo-icon">OCS</div>
+        <div class="logo-text">
+          <h1>O.C.S Group</h1>
+          <span>Admin Panel</span>
+        </div>
+      </div>
+      
+      <nav class="admin-nav">
+        <a href="#dashboard" class="active" data-section="dashboard">
+          <span>📊</span> Dashboard
+        </a>
+        <a href="#notices" data-section="notices">
+          <span>📢</span> Notices
+        </a>
+        <a href="#teachers" data-section="teachers">
+          <span>👨‍🏫</span> Teachers
+        </a>
+        <a href="#events" data-section="events">
+          <span>📅</span> Events
+        </a>
+        <a href="../index.html" target="_blank">
+          <span>🌐</span> View Website
+        </a>
+        <a href="#" class="logout" id="logoutBtn">
+          <span>🚪</span> Logout
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <header class="admin-header">
+        <h1 id="pageTitle">Dashboard</h1>
+        <span id="currentDate"></span>
+      </header>
+
+      <div class="admin-content">
+        <!-- Dashboard Section -->
+        <section id="dashboard-section" class="admin-section">
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-icon blue">📢</div>
+              <div class="stat-info">
+                <h3 id="noticeCount">0</h3>
+                <p>Total Notices</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon green">👨‍🏫</div>
+              <div class="stat-info">
+                <h3 id="teacherCount">0</h3>
+                <p>Total Teachers</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon amber">📅</div>
+              <div class="stat-info">
+                <h3 id="eventCount">0</h3>
+                <p>Upcoming Events</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>Recent Notices</h2>
+              <button class="btn btn-primary btn-sm" onclick="showSection('notices')">View All</button>
+            </div>
+            <div class="admin-card-body">
+              <div id="recentNotices"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Notices Section -->
+        <section id="notices-section" class="admin-section" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>Add New Notice</h2>
+            </div>
+            <div class="admin-card-body">
+              <form class="admin-form" id="noticeForm">
+                <div class="form-group">
+                  <label for="noticeTitle">Title *</label>
+                  <input type="text" id="noticeTitle" placeholder="Enter notice title" required>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="noticeDate">Date *</label>
+                    <input type="date" id="noticeDate" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="noticeCategory">Category *</label>
+                    <select id="noticeCategory" required>
+                      <option value="general">General</option>
+                      <option value="important">Important</option>
+                      <option value="academic">Academic</option>
+                      <option value="event">Event</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="noticeContent">Content *</label>
+                  <textarea id="noticeContent" rows="4" placeholder="Enter notice content" required></textarea>
+                </div>
+                <div class="btn-group">
+                  <button type="submit" class="btn btn-primary">Add Notice</button>
+                  <button type="reset" class="btn btn-outline">Clear</button>
+                </div>
+              </form>
+              
+              <div class="preview-section">
+                <h3>Preview</h3>
+                <div class="preview-container" id="noticePreview"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>All Notices</h2>
+            </div>
+            <div class="admin-card-body">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="noticesTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Teachers Section -->
+        <section id="teachers-section" class="admin-section" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>Add New Teacher</h2>
+            </div>
+            <div class="admin-card-body">
+              <form class="admin-form" id="teacherForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="teacherName">Name *</label>
+                    <input type="text" id="teacherName" placeholder="Enter teacher name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="teacherDesignation">Designation *</label>
+                    <input type="text" id="teacherDesignation" placeholder="e.g., Senior Teacher" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="teacherSubject">Subject *</label>
+                    <input type="text" id="teacherSubject" placeholder="e.g., Mathematics" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="teacherQualification">Qualification *</label>
+                    <input type="text" id="teacherQualification" placeholder="e.g., M.Sc, B.Ed" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="teacherExperience">Experience *</label>
+                  <input type="text" id="teacherExperience" placeholder="e.g., 10 Years" required>
+                </div>
+                <div class="btn-group">
+                  <button type="submit" class="btn btn-primary">Add Teacher</button>
+                  <button type="reset" class="btn btn-outline">Clear</button>
+                </div>
+              </form>
+              
+              <div class="preview-section">
+                <h3>Preview</h3>
+                <div class="preview-container" id="teacherPreview"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>All Teachers</h2>
+            </div>
+            <div class="admin-card-body">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Subject</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="teachersTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events-section" class="admin-section" style="display: none;">
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>Add New Event</h2>
+            </div>
+            <div class="admin-card-body">
+              <form class="admin-form" id="eventForm">
+                <div class="form-group">
+                  <label for="eventTitle">Event Title *</label>
+                  <input type="text" id="eventTitle" placeholder="Enter event title" required>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="eventDate">Date *</label>
+                    <input type="date" id="eventDate" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="eventTime">Time *</label>
+                    <input type="text" id="eventTime" placeholder="e.g., 10:00 AM - 2:00 PM" required>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="eventVenue">Venue *</label>
+                  <input type="text" id="eventVenue" placeholder="e.g., School Auditorium" required>
+                </div>
+                <div class="form-group">
+                  <label for="eventDescription">Description *</label>
+                  <textarea id="eventDescription" rows="4" placeholder="Enter event description" required></textarea>
+                </div>
+                <div class="btn-group">
+                  <button type="submit" class="btn btn-primary">Add Event</button>
+                  <button type="reset" class="btn btn-outline">Clear</button>
+                </div>
+              </form>
+              
+              <div class="preview-section">
+                <h3>Preview</h3>
+                <div class="preview-container" id="eventPreview"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <h2>All Events</h2>
+            </div>
+            <div class="admin-card-body">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Date</th>
+                    <th>Venue</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="eventsTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="../js/main.js"></script>
+  <script src="../js/components.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

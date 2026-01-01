@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Teachers - O.C.S Group of Institute</title>
+  <meta name="description" content="Meet our dedicated and experienced teachers at O.C.S Group of Institute.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">OCS</div>
+        <div class="logo-text">
+          <h1>O.C.S Group of Institute</h1>
+          <span>Excellence in Education</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="teachers.html" class="active">Teachers</a>
+        <a href="facilities.html">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="notices.html">Notices</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Teachers</h1>
+      <p>Meet our dedicated faculty committed to your child's success</p>
+    </div>
+  </section>
+
+  <!-- Teachers Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Our Faculty</div>
+        <h2>Experienced & Caring Teachers</h2>
+        <p>Our teachers are not just educators but mentors who guide students with passion and dedication.</p>
+      </div>
+      <div class="cards-grid" id="teachersGrid"></div>
+    </div>
+  </section>
+
+  <!-- Why Our Teachers -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Why Choose Us</div>
+        <h2>What Makes Our Teachers Special</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon blue">🎓</div>
+          <h3>Qualified & Trained</h3>
+          <p>All our teachers are well-qualified with B.Ed and higher degrees in their respective subjects.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">❤️</div>
+          <h3>Passionate & Caring</h3>
+          <p>Our teachers genuinely care about each student's growth and well-being.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon amber">📈</div>
+          <h3>Result-Oriented</h3>
+          <p>Focused on achieving the best academic outcomes for every student.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon blue">🔄</div>
+          <h3>Regular Training</h3>
+          <p>Continuous professional development to stay updated with modern teaching methods.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">👥</div>
+          <h3>Parent Partnership</h3>
+          <p>Regular communication with parents about student progress and concerns.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon amber">🌟</div>
+          <h3>Individual Attention</h3>
+          <p>Small class sizes ensure personalized attention for every child.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo">
+            <div class="logo-icon">OCS</div>
+            <div class="logo-text">
+              <h1>O.C.S Group of Institute</h1>
+              <span>Excellence in Education</span>
+            </div>
+          </div>
+          <p>Providing quality education from Kindergarten to Class 6. Nurturing young minds and building bright futures since establishment.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="about.html">About Us</a>
+          <a href="classes.html">Classes</a>
+          <a href="teachers.html">Teachers</a>
+          <a href="admission.html">Admission</a>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="facilities.html">Facilities</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="notices.html">Notices</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>📍 Purbaichapur, P.O - Kadambagchi, P.S - Duttapukur, Dist - North 24 Parganas, Pin - 700125, West Bengal, India</p>
+          <p>📞 9330000000</p>
+          <p>✉️ info@ocsschool.edu.in</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 O.C.S Group of Institute. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top">↑</button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/render.js"></script>
+  <script>
+    renderTeachers('teachersGrid');
+  </script>
+</body>
+</html>

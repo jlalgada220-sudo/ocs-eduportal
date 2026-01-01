@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facilities - O.C.S Group of Institute</title>
+  <meta name="description" content="Explore the modern facilities and infrastructure at O.C.S Group of Institute.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">OCS</div>
+        <div class="logo-text">
+          <h1>O.C.S Group of Institute</h1>
+          <span>Excellence in Education</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="classes.html">Classes</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="facilities.html" class="active">Facilities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="notices.html">Notices</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Facilities</h1>
+      <p>Modern infrastructure for holistic learning and development</p>
+    </div>
+  </section>
+
+  <!-- Facilities Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">Infrastructure</div>
+        <h2>World-Class Facilities</h2>
+        <p>We provide state-of-the-art facilities to ensure the best learning environment for our students.</p>
+      </div>
+      <div class="cards-grid" style="grid-template-columns: 1fr;" id="facilitiesGrid"></div>
+    </div>
+  </section>
+
+  <!-- Additional Features -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-badge">More Features</div>
+        <h2>Campus Amenities</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon blue">🌳</div>
+          <h3>Green Campus</h3>
+          <p>Eco-friendly campus with trees and gardens providing fresh air and natural beauty.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">🔒</div>
+          <h3>Safe Environment</h3>
+          <p>CCTV surveillance and trained security staff for complete safety of students.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon amber">💧</div>
+          <h3>Clean Water</h3>
+          <p>RO purified drinking water available throughout the campus.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon blue">🚻</div>
+          <h3>Hygienic Toilets</h3>
+          <p>Well-maintained, clean toilets with regular housekeeping.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon green">🅿️</div>
+          <h3>Parking Space</h3>
+          <p>Ample parking space for parents and staff vehicles.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon amber">♿</div>
+          <h3>Accessibility</h3>
+          <p>Ramps and facilities for differently-abled students.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo">
+            <div class="logo-icon">OCS</div>
+            <div class="logo-text">
+              <h1>O.C.S Group of Institute</h1>
+              <span>Excellence in Education</span>
+            </div>
+          </div>
+          <p>Providing quality education from Kindergarten to Class 6. Nurturing young minds and building bright futures since establishment.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="about.html">About Us</a>
+          <a href="classes.html">Classes</a>
+          <a href="teachers.html">Teachers</a>
+          <a href="admission.html">Admission</a>
+        </div>
+        <div class="footer-links">
+          <h4>Resources</h4>
+          <a href="facilities.html">Facilities</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="notices.html">Notices</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>📍 Purbaichapur, P.O - Kadambagchi, P.S - Duttapukur, Dist - North 24 Parganas, Pin - 700125, West Bengal, India</p>
+          <p>📞 9330000000</p>
+          <p>✉️ info@ocsschool.edu.in</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 O.C.S Group of Institute. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top">↑</button>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/render.js"></script>
+  <script>
+    renderFacilities('facilitiesGrid');
+  </script>
+</body>
+</html>
